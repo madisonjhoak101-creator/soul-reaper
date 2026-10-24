@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bsiu5gigy7xh5" path="res://graveyard.jpg" id="1_2jwxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
-size = Vector2(1057, 67.25)
+size = Vector2(1293, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hffna"]
 size = Vector2(123.25, 120)
@@ -14,21 +14,20 @@ size = Vector2(61, 77.5)
 [node name="Graveyard" type="StaticBody2D" unique_id=2060923638]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=487199912]
-position = Vector2(574.9304, 321)
-scale = Vector2(2.5057495, 2.5166667)
+scale = Vector2(2.8129394, 2.7891026)
 texture = ExtResource("1_2jwxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=432142012]
-position = Vector2(528.5, 615.625)
+position = Vector2(0, 320)
 shape = SubResource("RectangleShape2D_6ok5c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=581442818]
-position = Vector2(578, 318)
+zoom = Vector2(0.895, 0.89)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1621653445]
-position = Vector2(1086.375, 583)
+position = Vector2(583, 278)
 shape = SubResource("RectangleShape2D_hffna")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1035914551]
-position = Vector2(1119, 480.75)
+position = Vector2(615, 201)
 shape = SubResource("RectangleShape2D_c465d")
