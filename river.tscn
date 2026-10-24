@@ -9,15 +9,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(662.5, 83.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(20.388336, 152.94687)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(147, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(21.994766, 152.94687)
 
 [node name="river" type="StaticBody2D" unique_id=1819163021]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=179749500]
+position = Vector2(-3, -2)
 texture = ExtResource("1_iiml5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849197182]
@@ -27,25 +28,24 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Node2D" type="Node2D" parent="." unique_id=1165994183]
 script = ExtResource("2_fuygp")
 
+[node name="PassengerDetector" type="Area2D" parent="Node2D" unique_id=1655355376]
+position = Vector2(-3.8146973e-06, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PassengerDetector" unique_id=1552918343]
+position = Vector2(61.000004, 283)
+shape = SubResource("RectangleShape2D_yf5fn")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1156422377]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=165927329]
-position = Vector2(56.47545, 279.19684)
+position = Vector2(59, 283)
 rotation = 1.5656848
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="boat" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1130626154]
-position = Vector2(59, 263)
+position = Vector2(59.000004, 276.00003)
 scale = Vector2(0.8897953, 0.8556783)
 texture = ExtResource("2_5iwgs")
-
-[node name="PassengerDetector" type="Area2D" parent="Node2D/CharacterBody2D/boat" unique_id=1655355376]
-position = Vector2(-66.30739, -307.3585)
-scale = Vector2(1.123854, 1.1686635)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D/boat/PassengerDetector" unique_id=1552918343]
-position = Vector2(60.500004, 270)
-shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("3_5iwgs")]
 position = Vector2(-633, 194.00002)
@@ -53,7 +53,7 @@ scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D2" unique_id=1772533004]
 position = Vector2(4219.9995, -1293.3334)
-zoom = Vector2(-0.832, -0.83)
+zoom = Vector2(0.832, 0.83)
 
 [node name="Node2D3" parent="." unique_id=1325533524 instance=ExtResource("5_v534t")]
 position = Vector2(-516, 222)

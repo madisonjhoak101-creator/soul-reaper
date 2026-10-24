@@ -11,9 +11,6 @@ func _ready() -> void:
 	detector.body_entered.connect(_on_passenger_entered)
 	pass # Replace with function body.
 
-
-
-
 func _on_passenger_entered(body: Node2D) -> void:
 	if body.is_in_group("soul") and not should_move:
 		should_move = true
