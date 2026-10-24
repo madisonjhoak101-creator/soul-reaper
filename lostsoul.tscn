@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://15rupgfxferb"]
+
+[ext_resource type="Texture2D" uid="uid://casbrlfycn33c" path="res://666.png" id="2_ubotm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 462.0
+height = 1574.0
+
+[node name="Node2D" type="Node2D" unique_id=1325533524]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=58585494]
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=1657378842]
+position = Vector2(2, 0)
+texture = ExtResource("2_ubotm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=379316771 groups=["soul"]]
+shape = SubResource("CapsuleShape2D_yf5fn")
