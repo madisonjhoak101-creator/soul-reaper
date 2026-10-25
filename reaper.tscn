@@ -9,11 +9,11 @@ height = 1432.0
 
 [node name="Node2D" type="Node2D" unique_id=1538676072]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=248704956]
+[node name="reaper" type="CharacterBody2D" parent="." unique_id=248704956]
 script = ExtResource("1_7mi6d")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2095459272]
+[node name="Sprite2D" type="Sprite2D" parent="reaper" unique_id=2095459272]
 texture = ExtResource("1_vj8bx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1608487214]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reaper" unique_id=1608487214]
 shape = SubResource("CapsuleShape2D_g4v7s")

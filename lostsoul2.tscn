@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://bi5m4emnpbbod" path="res://soulreaper2.gd" id="1_eag3y"]
 [ext_resource type="Texture2D" uid="uid://du4dewlx621n7" path="res://2822.png" id="3_43iw5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1015.2411, 1025.8773)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
 radius = 462.0
 height = 1574.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1015.2411, 1025.8773)
 
 [node name="Node2D" type="Node2D" unique_id=1325533524]
 
@@ -17,21 +17,22 @@ height = 1574.0
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_eag3y")
 
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=1657378842]
+position = Vector2(1.9999999, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_7hib4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=379316771 groups=["soul"]]
+position = Vector2(0, -7.629393e-05)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
 [node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D2" unique_id=2122506726]
-position = Vector2(0, -979.9999)
+position = Vector2(0, -919.9999)
 scale = Vector2(0.47279406, 0.46789217)
 texture = ExtResource("3_43iw5")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=1657378842]
-position = Vector2(2, 0)
-texture = ExtResource("1_7hib4")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1064402194]
-position = Vector2(0, -979.9998)
-scale = Vector2(0.47279403, 0.46789214)
+position = Vector2(0, -919.9998)
+scale = Vector2(0.47279394, 0.46789205)
 shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=379316771 groups=["soul"]]
-position = Vector2(0, -7.629394e-05)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("CapsuleShape2D_yf5fn")
