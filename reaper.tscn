@@ -10,6 +10,7 @@ height = 1432.0
 [node name="Node2D" type="Node2D" unique_id=1538676072]
 
 [node name="reaper" type="CharacterBody2D" parent="." unique_id=248704956]
+scale = Vector2(1.06, 1.06)
 script = ExtResource("1_7mi6d")
 
 [node name="Sprite2D" type="Sprite2D" parent="reaper" unique_id=2095459272]

@@ -1,33 +1,39 @@
 [gd_scene format=3 uid="uid://cw5x2te4c13w4"]
 
-[ext_resource type="Texture2D" uid="uid://bsiu5gigy7xh5" path="res://graveyard.jpg" id="1_2jwxh"]
+[ext_resource type="Texture2D" uid="uid://b7i686na0sroq" path="res://760.png" id="1_siodt"]
+[ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_skvyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
-size = Vector2(1293, 86)
+size = Vector2(2450, 199)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hffna"]
-size = Vector2(123.25, 120)
+size = Vector2(123.25, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c465d"]
-size = Vector2(61, 77.5)
+size = Vector2(116.5, 81.75)
 
 [node name="Graveyard" type="StaticBody2D" unique_id=2060923638]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=487199912]
-scale = Vector2(2.8129394, 2.7891026)
-texture = ExtResource("1_2jwxh")
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=510479475]
+position = Vector2(-1.6616342, 0.5118092)
+scale = Vector2(2.409297, 2.782693)
+texture = ExtResource("1_siodt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=432142012]
-position = Vector2(0, 320)
+position = Vector2(-3, 698.5)
 shape = SubResource("RectangleShape2D_6ok5c")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=581442818]
-zoom = Vector2(0.895, 0.89)
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1621653445]
-position = Vector2(583, 278)
+position = Vector2(-52, 532)
 shape = SubResource("RectangleShape2D_hffna")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1035914551]
-position = Vector2(615, 201)
+position = Vector2(-227, 556.875)
 shape = SubResource("RectangleShape2D_c465d")
+
+[node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_skvyd")]
+position = Vector2(-1158, 497)
+scale = Vector2(0.15, 0.15)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=312499264]
+zoom = Vector2(0.47, 0.41)
