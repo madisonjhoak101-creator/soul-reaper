@@ -1,15 +1,19 @@
 extends CharacterBody2D
+
 @onready var sprite = $Sprite2D2
 @export var detection_range: float = 100.0
 @export var speed: float = 50.0
 @export var target_position: Vector2 = Vector2(500,300)
 @export var reaper: CharacterBody2D
+
 var is_moving = false
 const SPEED =300.0
 var is_walking: bool = true
+
 @export var walk_direction: int = 1 # 1 for right, -1 for left
 @onready var animated_sprite = $CharacterBody2D2
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	if sprite:
 		sprite.visible = false
@@ -17,13 +21,16 @@ func _ready() -> void:
 	if animated_sprite:
 		animated_sprite.play("walk")
 	pass # Replace with function body.
+
 func move_to(destination: Vector2):
 	target_position = destination
 	is_moving = true
 	is_walking = false
 	if sprite:
 		sprite.visible = false
+
 func face_player() -> void:
+	print("flip")
 	if reaper:
 		var target_node = animated_sprite if animated_sprite else sprite
 		if target_node:
@@ -31,6 +38,7 @@ func face_player() -> void:
 				target_node.flip_h = true
 			else:
 				target_node.flip_h = false
+
 func walk_to_target() -> void:
 	var direction = (target_position - global_position).normalized()
 	velocity = direction * speed
@@ -44,10 +52,12 @@ func walk_to_target() -> void:
 		is_walking = false
 		velocity = Vector2.ZERO
 	move_and_slide()
+
 func flip_sprite(left: bool) -> void:
 	var target_node = animated_sprite if animated_sprite else sprite
 	if target_node:
 		target_node.flip_h = left
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("flip_left"):
 		flip_sprite(true)
@@ -67,5 +77,6 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		move_and_slide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass

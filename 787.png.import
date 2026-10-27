@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsiu5gigy7xh5"
-path="res://.godot/imported/graveyard.jpg-09fe508e2f4386a2c080573b33bc6274.ctex"
+uid="uid://c81qjum42p33h"
+path="res://.godot/imported/787.png-923918e628e15ae8c15453a3a047a6aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graveyard.jpg"
-dest_files=["res://.godot/imported/graveyard.jpg-09fe508e2f4386a2c080573b33bc6274.ctex"]
+source_file="res://787.png"
+dest_files=["res://.godot/imported/787.png-923918e628e15ae8c15453a3a047a6aa.ctex"]
 
 [params]
 

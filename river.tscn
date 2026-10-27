@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://btp5ycs2rgxcf"]
 
-[ext_resource type="Texture2D" uid="uid://bcoyrw1isad32" path="res://671.png" id="1_iiml5"]
+[ext_resource type="Texture2D" uid="uid://bnc44aa8dmmkp" path="res://786.png" id="1_v534t"]
 [ext_resource type="Texture2D" uid="uid://ue0lx30uc1q0" path="res://670.png" id="2_5iwgs"]
 [ext_resource type="Script" uid="uid://bim0s58su4a6f" path="res://boat.gd" id="2_fuygp"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_5iwgs"]
 [ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="5_v534t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(662.5, 83.5)
+size = Vector2(657.5, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(147, 10)
@@ -19,12 +19,19 @@ size = Vector2(21.994766, 152.94687)
 metadata/_edit_horizontal_guides_ = [-392.0]
 metadata/_edit_vertical_guides_ = [690.0]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=228161491]
+offset_left = -89.0
+offset_top = 244.0
+offset_right = -49.0
+offset_bottom = 284.0
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=179749500]
-position = Vector2(-3, -2)
-texture = ExtResource("1_iiml5")
+position = Vector2(1.0000159, -14.5)
+scale = Vector2(1.1262136, 1.1307472)
+texture = ExtResource("1_v534t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849197182]
-position = Vector2(-362.25, 346.75)
+position = Vector2(-364.75, 334.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1165994183]
@@ -50,7 +57,7 @@ scale = Vector2(0.8897953, 0.8556783)
 texture = ExtResource("2_5iwgs")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("3_5iwgs")]
-position = Vector2(-633, 194.00002)
+position = Vector2(-632, 180)
 scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D2" unique_id=1772533004]
@@ -58,4 +65,4 @@ position = Vector2(4220, -1293.3334)
 zoom = Vector2(0.827, 0.82)
 
 [node name="Node2D3" parent="." unique_id=1325533524 instance=ExtResource("5_v534t")]
-position = Vector2(-516, 222)
+position = Vector2(-517, 212)
