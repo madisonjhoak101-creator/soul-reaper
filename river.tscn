@@ -15,6 +15,27 @@ size = Vector2(147, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(21.994766, 152.94687)
 
+[sub_resource type="Gradient" id="Gradient_v534t"]
+colors = PackedColorArray(1, 1, 1, 1, 1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
+gradient = SubResource("Gradient_v534t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hffna"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(330, 150, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 39.999996
+linear_accel_max = 59.999996
+scale_min = 0.099999994
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_a75lk")
+turbulence_enabled = true
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 0.2000015
+
 [node name="river" type="StaticBody2D" unique_id=1819163021]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=228161491]
@@ -64,3 +85,11 @@ zoom = Vector2(0.827, 0.82)
 
 [node name="Node2D3" parent="." unique_id=1325533524 instance=ExtResource("5_v534t")]
 position = Vector2(-517, 212)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1070620898]
+editor_description = "fireflys 
+"
+position = Vector2(311, 128)
+amount = 200
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_hffna")
