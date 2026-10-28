@@ -1,18 +1,27 @@
 [gd_scene format=3 uid="uid://1w8emlw8p4fa"]
 
-[ext_resource type="Texture2D" uid="uid://c81qjum42p33h" path="res://787.png" id="1_lifw2"]
+[ext_resource type="Texture2D" uid="uid://7dr6n4aj1eyt" path="res://forest.png" id="1_stcry"]
+[ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_stcry"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(14, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
+size = Vector2(1386, 55)
 
 [node name="Node2D" type="Node2D" unique_id=255401158]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2065588525]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2096097999]
-position = Vector2(3, 1)
-shape = SubResource("RectangleShape2D_g4v7s")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1323769770]
+position = Vector2(1, -0.5)
+scale = Vector2(0.8953488, 0.8979359)
+texture = ExtResource("1_stcry")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=1323769770]
-position = Vector2(-2, 28)
-texture = ExtResource("1_lifw2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2096097999]
+position = Vector2(1, 364.5)
+shape = SubResource("RectangleShape2D_stcry")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1102965005]
+zoom = Vector2(0.83, 0.825)
+
+[node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_stcry")]
+position = Vector2(-629, 224)
+scale = Vector2(0.15, 0.15)
