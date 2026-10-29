@@ -13,7 +13,7 @@ height = 1432.0
 scale = Vector2(1.06, 1.06)
 script = ExtResource("1_7mi6d")
 
-[node name="Sprite2D" type="Sprite2D" parent="reaper" unique_id=2095459272]
+[node name="Sprite2D" type="Sprite2D" parent="reaper" unique_id=266476396]
 texture = ExtResource("2_7mi6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="reaper" unique_id=1608487214]

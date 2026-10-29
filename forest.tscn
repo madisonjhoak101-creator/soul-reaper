@@ -2,26 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://7dr6n4aj1eyt" path="res://forest.png" id="1_stcry"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_stcry"]
+[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_uq144"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
-size = Vector2(1386, 55)
+size = Vector2(1405, 55)
 
-[node name="Node2D" type="Node2D" unique_id=255401158]
+[node name="Node2D" type="StaticBody2D" unique_id=1134470995]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2065588525]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1323769770]
-position = Vector2(1, -0.5)
-scale = Vector2(0.8953488, 0.8979359)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323769770]
+position = Vector2(0.50001144, -0.5)
+scale = Vector2(0.9076228, 0.8979359)
 texture = ExtResource("1_stcry")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2096097999]
-position = Vector2(1, 364.5)
-shape = SubResource("RectangleShape2D_stcry")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1102965005]
-zoom = Vector2(0.83, 0.825)
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_stcry")]
 position = Vector2(-629, 224)
 scale = Vector2(0.15, 0.15)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1102965005]
+zoom = Vector2(0.82, 0.825)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2096097999]
+position = Vector2(0.5, 364.5)
+shape = SubResource("RectangleShape2D_stcry")
+
+[node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_uq144")]
+position = Vector2(-477, 257)

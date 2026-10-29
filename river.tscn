@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="5_v534t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(657.5, 91)
+size = Vector2(648.5, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(147, 10)
@@ -50,7 +50,7 @@ scale = Vector2(1.1262136, 1.1307472)
 texture = ExtResource("1_v534t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849197182]
-position = Vector2(-364.75, 334.5)
+position = Vector2(-369.25, 334.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1165994183]
@@ -66,13 +66,13 @@ shape = SubResource("RectangleShape2D_yf5fn")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1156422377]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=165927329]
-position = Vector2(59, 283)
+position = Vector2(61, 305)
 rotation = 1.5656848
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="boat" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1130626154]
-position = Vector2(59.000004, 276.00003)
-scale = Vector2(0.8897953, 0.8556783)
+position = Vector2(68.00001, 261.00003)
+scale = Vector2(1.1101493, 1.0472528)
 texture = ExtResource("2_5iwgs")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("3_5iwgs")]

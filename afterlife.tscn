@@ -4,4 +4,7 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554163146]
 
+[node name="Camera2D" type="Camera2D" parent="CollisionShape2D" unique_id=836177945]
+zoom = Vector2(0.82, 0.82)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=713928238]

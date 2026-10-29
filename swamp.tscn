@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c7pvvmvq1xr4v"]
 
 [ext_resource type="Texture2D" uid="uid://6dpp3n6aarkm" path="res://793.png" id="1_q7rth"]
+[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="2_jdxqy"]
+[ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_fews0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hoa"]
 size = Vector2(184.5, 45.5)
@@ -11,26 +13,36 @@ size = Vector2(184, 45)
 [node name="Node2D" type="StaticBody2D" unique_id=1125532503]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302406621]
-position = Vector2(0.9999771, -14.499998)
-scale = Vector2(0.89793277, 0.902523)
+position = Vector2(1.3828278e-05, -0.4999876)
+scale = Vector2(0.90697664, 0.9048165)
 texture = ExtResource("1_q7rth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243385966]
-position = Vector2(-590, 277)
+position = Vector2(-592, 293)
 shape = SubResource("RectangleShape2D_g5hoa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
-position = Vector2(-301, 275)
+position = Vector2(-301, 294)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=239485302]
-position = Vector2(-13, 278)
+position = Vector2(-13, 296)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2023865005]
-position = Vector2(277, 280)
+position = Vector2(277, 295)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=183271670]
-position = Vector2(570, 278)
+position = Vector2(571, 296)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("2_jdxqy")]
+position = Vector2(-530, 193)
+
+[node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("3_fews0")]
+position = Vector2(-640, 158)
+scale = Vector2(0.15, 0.15)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=43967626]
+zoom = Vector2(0.82, 0.82)
