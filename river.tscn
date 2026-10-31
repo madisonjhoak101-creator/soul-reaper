@@ -83,8 +83,10 @@ scale = Vector2(0.15, 0.15)
 position = Vector2(4220, -1293.3334)
 zoom = Vector2(0.827, 0.82)
 
-[node name="Node2D3" parent="." unique_id=1325533524 instance=ExtResource("5_v534t")]
+[node name="Node2D3" parent="." unique_id=1325533524 node_paths=PackedStringArray("reaper") instance=ExtResource("5_v534t")]
 position = Vector2(-517, 212)
+target_position = Vector2(-62, 212)
+reaper = NodePath("../Node2D2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1070620898]
 editor_description = "fireflys 

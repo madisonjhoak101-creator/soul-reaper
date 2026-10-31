@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
+@onready var ghost_sprite = $Sprite2D
 @onready var sprite = $Sprite2D2
 @export var detection_range: float = 100.0
 @export var speed: float = 50.0
 @export var target_position: Vector2 = Vector2(500,300)
-@export var reaper: CharacterBody2D
+@export var reaper: Node2D
 
 var is_moving = false
 const SPEED =300.0
@@ -32,11 +33,13 @@ func move_to(destination: Vector2):
 func face_player() -> void:
 	print("flip")
 	if reaper:
-		var target_node = animated_sprite if animated_sprite else sprite
+		var target_node = animated_sprite if animated_sprite else ghost_sprite
 		if target_node:
 			if reaper.global_position.x < global_position.x:
+				print("flipping")
 				target_node.flip_h = true
 			else:
+				print("not flipping")
 				target_node.flip_h = false
 
 func walk_to_target() -> void:
