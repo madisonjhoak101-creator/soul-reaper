@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="soul reaper (final game)"
-run/main_scene="uid://btp5ycs2rgxcf"
+run/main_scene="uid://cyqplmviqq14c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
