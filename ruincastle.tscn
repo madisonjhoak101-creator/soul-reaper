@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5t5nei4au174"]
 
-[ext_resource type="Texture2D" uid="uid://bm0u38dsbwl7a" path="res://792.png" id="1_8ykxy"]
+[ext_resource type="Texture2D" uid="uid://vg78na4rfmto" path="res://ruin castle.png" id="1_klipk"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_klipk"]
 [ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_rum34"]
 
@@ -53,12 +53,12 @@ scale = Vector2(0.15, 0.15)
 zoom = Vector2(0.82, 0.82)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1011903565]
-position = Vector2(-7.200241e-05, -7.6293945e-06)
-scale = Vector2(0.9082687, 0.90596336)
-texture = ExtResource("1_8ykxy")
+position = Vector2(2.9802322e-08, -5.9604645e-08)
+scale = Vector2(1.2400703, 1.2366769)
+texture = ExtResource("1_klipk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685289674]
-position = Vector2(-0.25, 357)
+position = Vector2(0, 358)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_rum34")]
