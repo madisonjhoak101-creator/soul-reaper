@@ -44,6 +44,7 @@ emission_box_extents = Vector3(700, 1, 1)
 gravity = Vector3(0, 3000, 0)
 scale_min = 0.19999999
 scale_over_velocity_curve = SubResource("CurveXYZTexture_uujvg")
+color = Color(1, 0.67415977, 0.6048774, 1)
 color_initial_ramp = SubResource("GradientTexture1D_d0i4j")
 
 [node name="Node2D" type="StaticBody2D" unique_id=1650717591]
