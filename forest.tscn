@@ -11,7 +11,7 @@ size = Vector2(1405, 55)
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(700, 350, 1)
-gravity = Vector3(0, 98, 0)
+gravity = Vector3(0, 10, 0)
 
 [node name="Node2D" type="StaticBody2D" unique_id=1134470995]
 
