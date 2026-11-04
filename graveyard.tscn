@@ -31,6 +31,54 @@ size = Vector2(85.5, 115)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0tw5"]
 size = Vector2(97, 133.75)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uujvg"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_ohndo"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0.0033557042, 0.004963249), 0.0, 1.4555668, 0, 0, Vector2(0.5100671, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.3804411, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_skvyd"]
+curve = SubResource("Curve_ohndo")
+
+[sub_resource type="Gradient" id="Gradient_skvyd"]
+colors = PackedColorArray(1, 1, 1, 0.078431375, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uujvg"]
+gradient = SubResource("Gradient_skvyd")
+
+[sub_resource type="Curve" id="Curve_skvyd"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_uujvg"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 14.972479), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rxxet"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_rxxet"]
+curve_x = SubResource("Curve_skvyd")
+curve_y = SubResource("Curve_uujvg")
+curve_z = SubResource("Curve_rxxet")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -400, 0)
+emission_shape = 3
+emission_box_extents = Vector3(700, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.19999999
+scale_over_velocity_curve = SubResource("CurveXYZTexture_rxxet")
+color_initial_ramp = SubResource("GradientTexture1D_uujvg")
+alpha_curve = SubResource("CurveTexture_skvyd")
+
 [node name="Graveyard" type="StaticBody2D" unique_id=2060923638]
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=510479475]
@@ -84,3 +132,10 @@ shape = SubResource("RectangleShape2D_l0tw5")
 
 [node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_skvyd")]
 position = Vector2(-507, 249)
+
+[node name="Rain_light" type="GPUParticles2D" parent="." unique_id=969822844]
+material = SubResource("CanvasItemMaterial_uujvg")
+amount = 1000
+lifetime = 0.65
+preprocess = 0.5
+process_material = SubResource("ParticleProcessMaterial_g4v7s")

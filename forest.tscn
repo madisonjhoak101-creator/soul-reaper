@@ -7,6 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
 size = Vector2(1405, 55)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(700, 350, 1)
+gravity = Vector3(0, 98, 0)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1134470995]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323769770]
@@ -27,3 +33,7 @@ shape = SubResource("RectangleShape2D_stcry")
 
 [node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_uq144")]
 position = Vector2(-477, 257)
+
+[node name="Blowing_leaves" type="GPUParticles2D" parent="." unique_id=36238119]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_g4v7s")
