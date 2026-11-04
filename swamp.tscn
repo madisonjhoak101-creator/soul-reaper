@@ -3,12 +3,67 @@
 [ext_resource type="Texture2D" uid="uid://6dpp3n6aarkm" path="res://793.png" id="1_q7rth"]
 [ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="2_jdxqy"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_fews0"]
+[ext_resource type="Texture2D" uid="uid://cm0qtkcg4n8i2" path="res://fog.png" id="4_hhy7r"]
+[ext_resource type="Texture2D" uid="uid://batnut0kutwhl" path="res://841.png" id="5_n40g6"]
+[ext_resource type="Texture2D" uid="uid://bnagmpv3vvu2g" path="res://842.png" id="6_i5ll4"]
+[ext_resource type="Texture2D" uid="uid://dfyqdkxqi04a1" path="res://swamp_20261102131625.png" id="7_e0h62"]
+[ext_resource type="Texture2D" uid="uid://crlbqt3oywk71" path="res://swamp_20261104121826.jpg" id="8_kkvbj"]
+[ext_resource type="Texture2D" uid="uid://lqab552hg37j" path="res://swamp_20261102143343.jpg" id="9_k1cpo"]
+[ext_resource type="Texture2D" uid="uid://clad4k23fa5nm" path="res://swamp_20261102143400.jpg" id="10_dx1o6"]
+[ext_resource type="Texture2D" uid="uid://b4eqcvfdvfav2" path="res://swamp_20261102143411.jpg" id="11_sb1go"]
+[ext_resource type="Texture2D" uid="uid://g4tq0abapa58" path="res://swamp_20261102143422.jpg" id="12_4sn80"]
+[ext_resource type="Texture2D" uid="uid://bltcv4wn54h0a" path="res://swamp_20261102143430.jpg" id="13_gq6mx"]
+[ext_resource type="Texture2D" uid="uid://bibyytk5w3ca7" path="res://swamp_20261102143438.jpg" id="14_y02kx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hoa"]
 size = Vector2(184.5, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(184, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hhy7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n40g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i5ll4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e0h62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e0h62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kkvbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k1cpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dx1o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sb1go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4sn80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gq6mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y02kx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.6
+}]
 
 [node name="Node2D" type="StaticBody2D" unique_id=1125532503]
 
@@ -18,31 +73,36 @@ scale = Vector2(0.90697664, 0.9048165)
 texture = ExtResource("1_q7rth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243385966]
-position = Vector2(-592, 293)
+position = Vector2(-600, 314)
 shape = SubResource("RectangleShape2D_g5hoa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
-position = Vector2(-301, 294)
+position = Vector2(-324, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=239485302]
-position = Vector2(-13, 296)
+position = Vector2(-8, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2023865005]
-position = Vector2(277, 295)
+position = Vector2(289, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=183271670]
-position = Vector2(571, 296)
+position = Vector2(573, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("2_jdxqy")]
-position = Vector2(-530, 193)
+position = Vector2(-532, 213)
 
 [node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("3_fews0")]
-position = Vector2(-640, 158)
+position = Vector2(-640, 177)
 scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=43967626]
 zoom = Vector2(0.82, 0.82)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=370190180]
+position = Vector2(0, 348.99997)
+scale = Vector2(1.241, 0.491)
+sprite_frames = SubResource("SpriteFrames_g4v7s")

@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://onxnfy58pdcj"]
 
+[ext_resource type="Texture2D" uid="uid://b17xx7a450dkh" path="res://afterlife.jpg" id="1_tx118"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1403.5, 39.5)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1019896746]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554163146]
-
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D" unique_id=836177945]
-zoom = Vector2(0.82, 0.82)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=713928238]
+position = Vector2(0, 1.8189894e-12)
+scale = Vector2(1.239188, 1.2382445)
+texture = ExtResource("1_tx118")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554163146]
+position = Vector2(0.25, 373.75)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=836177945]
+zoom = Vector2(0.82, 0.82)

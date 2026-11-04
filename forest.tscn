@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1w8emlw8p4fa"]
 
-[ext_resource type="Texture2D" uid="uid://7dr6n4aj1eyt" path="res://forest.png" id="1_stcry"]
+[ext_resource type="Texture2D" uid="uid://bjrvoxi8n8rnx" path="res://new forest.png" id="1_uq144"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_stcry"]
 [ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_uq144"]
 
@@ -10,9 +10,9 @@ size = Vector2(1405, 55)
 [node name="Node2D" type="StaticBody2D" unique_id=1134470995]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323769770]
-position = Vector2(0.50001144, -0.5)
-scale = Vector2(0.9076228, 0.8979359)
-texture = ExtResource("1_stcry")
+position = Vector2(0, -2.9802322e-08)
+scale = Vector2(1.3707317, 1.3628473)
+texture = ExtResource("1_uq144")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_stcry")]
 position = Vector2(-629, 224)
