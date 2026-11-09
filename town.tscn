@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dxhpw1lvlcdjj"]
+
+[ext_resource type="Texture2D" uid="uid://c7pkwyfm2gy2h" path="res://town.jpg" id="1_e8yg3"]
+[ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_gwqsq"]
+[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_nki3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1404, 77.5)
+
+[node name="Node2D" type="StaticBody2D" unique_id=308309964]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=574956481]
+position = Vector2(3.2126904e-05, -6.1690807e-06)
+scale = Vector2(1.0985916, 1.0987483)
+texture = ExtResource("1_e8yg3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315684420]
+position = Vector2(0, 355.75)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("2_gwqsq")]
+position = Vector2(-638, 204)
+scale = Vector2(0.15, 0.15)
+
+[node name="Node2D" parent="." unique_id=58585494 instance=ExtResource("3_nki3b")]
+position = Vector2(-524, 238)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=537554167]
+zoom = Vector2(0.82, 0.82)
