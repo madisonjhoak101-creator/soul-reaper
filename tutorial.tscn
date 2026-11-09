@@ -1,10 +1,29 @@
 [gd_scene format=3 uid="uid://dic72e0r74cji"]
 
+[ext_resource type="Script" uid="uid://d1tmqj1wapflx" path="res://tutorial.gd" id="1_0cr88"]
 [ext_resource type="Texture2D" uid="uid://bkh4d1vqxm5j1" path="res://Untitled17_20261104145902.png" id="1_7n6eb"]
 [ext_resource type="Texture2D" uid="uid://bwimkcl5g21r5" path="res://Untitled17_20261104145859.png" id="1_ehuit"]
 [ext_resource type="Texture2D" uid="uid://dlrt2jljn2cs" path="res://Untitled18_20261104150025.png" id="3_5mrt3"]
+[ext_resource type="Texture2D" uid="uid://ds44hu1pyf51e" path="res://881.png" id="4_hu44a"]
+[ext_resource type="Texture2D" uid="uid://casbrlfycn33c" path="res://666.png" id="5_0cr88"]
+[ext_resource type="Texture2D" uid="uid://cxlulv1kxobsh" path="res://673.png" id="6_4t6hg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0cr88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4t6hg")
+}],
+"loop": 1,
+"name": &"flip",
+"speed": 1.5
+}]
 
 [node name="Node2D" type="StaticBody2D" unique_id=260121540]
+script = ExtResource("1_0cr88")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=849312947]
 offset_right = 1152.0
@@ -34,3 +53,29 @@ offset_right = 404.0
 offset_bottom = 540.0
 texture = ExtResource("3_5mrt3")
 expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=992338356]
+offset_left = 624.0
+offset_top = 110.0
+offset_right = 1012.0
+offset_bottom = 209.0
+texture = ExtResource("4_hu44a")
+expand_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=51894565]
+position = Vector2(836.4764, 398.9375)
+scale = Vector2(0.19606164, 0.17839895)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"flip"
+autoplay = "flip"
+speed_scale = 1.5
+flip_h = true
+
+[node name="BackButton" type="Button" parent="." unique_id=1032846425]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 135.0
+offset_bottom = 57.0
+text = "back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
