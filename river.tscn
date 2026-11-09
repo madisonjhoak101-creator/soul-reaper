@@ -18,7 +18,7 @@ size = Vector2(21.994766, 152.94687)
 [sub_resource type="Gradient" id="Gradient_v534t"]
 colors = PackedColorArray(1, 1, 1, 1, 1.353256, 1.353256, 1.353256, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v534t"]
 gradient = SubResource("Gradient_v534t")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hffna"]
@@ -31,7 +31,7 @@ linear_accel_min = 39.999996
 linear_accel_max = 59.999996
 scale_min = 0.099999994
 scale_max = 1.5
-color_ramp = SubResource("GradientTexture1D_a75lk")
+color_ramp = SubResource("GradientTexture1D_v534t")
 turbulence_enabled = true
 turbulence_initial_displacement_min = 1.490116e-06
 turbulence_initial_displacement_max = 0.2000015

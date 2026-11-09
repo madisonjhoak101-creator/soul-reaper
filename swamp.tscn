@@ -65,6 +65,28 @@ animations = [{
 "speed": 1.6
 }]
 
+[sub_resource type="Gradient" id="Gradient_e0h62"]
+offsets = PackedFloat32Array(0.003690037, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
+gradient = SubResource("Gradient_e0h62")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kkvbj"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(700, 150, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 39.999996
+linear_accel_max = 59.999996
+scale_min = 1.5
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_a75lk")
+turbulence_enabled = true
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 0.2000015
+
 [node name="Node2D" type="StaticBody2D" unique_id=1125532503]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302406621]
@@ -106,3 +128,11 @@ zoom = Vector2(0.82, 0.82)
 position = Vector2(0, 348.99997)
 scale = Vector2(1.241, 0.491)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=417534867]
+editor_description = "fireflys 
+"
+position = Vector2(5, 118)
+amount = 200
+lifetime = 50.0
+process_material = SubResource("ParticleProcessMaterial_kkvbj")

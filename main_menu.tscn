@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyqplmviqq14c"]
 
 [ext_resource type="Script" uid="uid://drqii1x3mwkvo" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://cxa0ln4gjg2j7" path="res://832.png" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://f2mmjd2iwvm3" path="res://663.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bpnhn5ib7sdfg" path="res://Untitled19_20261026083835.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://casbrlfycn33c" path="res://666.png" id="4_nlkkf"]
@@ -37,10 +38,10 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="GameTitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1982123606]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Soul  reaper"
+[node name="Title" type="Sprite2D" parent="CenterContainer/VBoxContainer" unique_id=1680580536]
+position = Vector2(44, -112.99999)
+scale = Vector2(0.7694281, 0.8140245)
+texture = ExtResource("2_glbon")
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2043902317]
 layout_mode = 2
