@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://uf2u5e7jlfru"]
+
+[ext_resource type="Texture2D" uid="uid://b73swcld25iqp" path="res://bar1.jpg" id="1_d4kci"]
+[ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_sao2x"]
+[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_sm06w"]
+[ext_resource type="Texture2D" uid="uid://bg0mj3onog3a6" path="res://Untitled30_20261110180947.png" id="4_fhoit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1404, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(345.60004, 1309.0566)
+
+[node name="Node2D" type="StaticBody2D" unique_id=454829516]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=725363151]
+position = Vector2(1.5000153, 0.9999924)
+scale = Vector2(1.3815143, 1.3846154)
+texture = ExtResource("1_d4kci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137814890]
+position = Vector2(1, 335)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=854203748]
+zoom = Vector2(0.82, 0.82)
+
+[node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("2_sao2x")]
+position = Vector2(-642, 158)
+scale = Vector2(0.15, 0.15)
+
+[node name="Node2D" parent="." unique_id=58585494 instance=ExtResource("3_sm06w")]
+position = Vector2(-529, 195)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=949195823]
+position = Vector2(478, 103)
+scale = Vector2(0.10416665, 0.10541945)
+texture = ExtResource("4_fhoit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2" unique_id=710126563]
+position = Vector2(-0.00048828125, 0)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_yf5fn")

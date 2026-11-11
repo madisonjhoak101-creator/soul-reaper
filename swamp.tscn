@@ -129,7 +129,7 @@ position = Vector2(0, 348.99997)
 scale = Vector2(1.241, 0.491)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
-frame_progress = 0.5475054
+frame_progress = 0.27228922
 speed_scale = 1.5
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=417534867]
