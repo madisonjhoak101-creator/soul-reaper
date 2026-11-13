@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cqnyfyepibir7"]
 
-[ext_resource type="Script" uid="uid://bhbp578ks7ern" path="res://barsoul.gd" id="1_0b7dj"]
 [ext_resource type="Texture2D" uid="uid://b8mle886vhlos" path="res://913.png" id="1_amva6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3gngh"]
@@ -8,7 +7,6 @@ radius = 6.1842804
 height = 12.533475
 
 [node name="Node2D" type="CharacterBody2D" unique_id=130962387]
-script = ExtResource("1_0b7dj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=361321177]
 position = Vector2(-4.000061, 0.9999981)
