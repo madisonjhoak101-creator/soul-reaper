@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5wjd23ojshqx"]
+
+[ext_resource type="Script" uid="uid://8t8y1begdrit" path="res://ruinsoul.gd" id="1_a2l4c"]
+[ext_resource type="Texture2D" uid="uid://cp6gdhq348msw" path="res://914.png" id="1_age7j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 0.99337745
+height = 2.6963103
+
+[node name="Node2D" type="CharacterBody2D" unique_id=466051746]
+script = ExtResource("1_a2l4c")
+speed = null
+stop_distance = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142073676]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.0950061, 0.10244988)
+texture = ExtResource("1_age7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529527923]
+position = Vector2(-3, 2.0000002)
+scale = Vector2(42.280006, 52.92)
+shape = SubResource("CapsuleShape2D_g4v7s")

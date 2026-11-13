@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c7pvvmvq1xr4v"]
 
 [ext_resource type="Texture2D" uid="uid://6dpp3n6aarkm" path="res://793.png" id="1_q7rth"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="2_jdxqy"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_fews0"]
 [ext_resource type="Texture2D" uid="uid://cm0qtkcg4n8i2" path="res://fog.png" id="4_hhy7r"]
 [ext_resource type="Texture2D" uid="uid://batnut0kutwhl" path="res://841.png" id="5_n40g6"]
@@ -14,12 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://g4tq0abapa58" path="res://swamp_20261102143422.jpg" id="12_4sn80"]
 [ext_resource type="Texture2D" uid="uid://bltcv4wn54h0a" path="res://swamp_20261102143430.jpg" id="13_gq6mx"]
 [ext_resource type="Texture2D" uid="uid://bibyytk5w3ca7" path="res://swamp_20261102143438.jpg" id="14_y02kx"]
+[ext_resource type="Script" uid="uid://dlytsq70qcx6s" path="res://forest2.gd" id="15_k1cpo"]
+[ext_resource type="Script" uid="uid://b0dmt07hrn73t" path="res://swamp.gd" id="15_kkvbj"]
+[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="16_k1cpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hoa"]
-size = Vector2(184.5, 45.5)
+size = Vector2(194.25, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(184, 45)
+size = Vector2(202, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -87,6 +89,12 @@ turbulence_enabled = true
 turbulence_initial_displacement_min = 1.490116e-06
 turbulence_initial_displacement_max = 0.2000015
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(30, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(63, 197)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1125532503]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302406621]
@@ -95,7 +103,7 @@ scale = Vector2(0.90697664, 0.9048165)
 texture = ExtResource("1_q7rth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243385966]
-position = Vector2(-600, 314)
+position = Vector2(-604.875, 314)
 shape = SubResource("RectangleShape2D_g5hoa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
@@ -111,14 +119,11 @@ position = Vector2(289, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=183271670]
-position = Vector2(573, 314)
+position = Vector2(582, 314)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("2_jdxqy")]
-position = Vector2(-532, 213)
-
 [node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("3_fews0")]
-position = Vector2(-640, 177)
+position = Vector2(-622, 178)
 scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=43967626]
@@ -139,3 +144,26 @@ position = Vector2(5, 118)
 amount = 200
 lifetime = 50.0
 process_material = SubResource("ParticleProcessMaterial_kkvbj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1457939488]
+position = Vector2(693, 203)
+script = ExtResource("15_kkvbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2010950600]
+position = Vector2(-6, 12)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1793151445]
+script = ExtResource("15_k1cpo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=1596578425]
+position = Vector2(-730, 186)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("16_k1cpo")]
+position = Vector2(40, 212)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

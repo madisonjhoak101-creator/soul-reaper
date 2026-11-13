@@ -26,11 +26,11 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("CapsuleShape2D_yf5fn")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2122506726]
-position = Vector2(0, -919.9999)
+position = Vector2(-18.875025, -1111.3749)
 scale = Vector2(0.47279406, 0.46789217)
 texture = ExtResource("3_43iw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064402194]
-position = Vector2(0, -919.9998)
+position = Vector2(-18.875027, -1111.3749)
 scale = Vector2(0.47279394, 0.46789205)
 shape = SubResource("RectangleShape2D_g4v7s")

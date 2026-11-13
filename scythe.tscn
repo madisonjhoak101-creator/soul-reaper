@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cqsx8iywlhe7l"]
+
+[ext_resource type="Script" uid="uid://cvj8oau4o1xdo" path="res://scythe.gd" id="1_ov54h"]
+[ext_resource type="Texture2D" uid="uid://bpnhn5ib7sdfg" path="res://Untitled19_20261026083835.png" id="2_fpx6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1265, 564.25934)
+
+[sub_resource type="Animation" id="Animation_ov54h"]
+resource_name = "new_animation"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fpx6y"]
+_data = {
+&"new_animation": SubResource("Animation_ov54h")
+}
+
+[node name="scythe" type="CharacterBody2D" unique_id=923385537]
+script = ExtResource("1_ov54h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=245020810]
+position = Vector2(-5.749275, -3.9824219)
+rotation = -2.0685863
+scale = Vector2(1.0457902, -0.9526)
+texture = ExtResource("2_fpx6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=754103329]
+position = Vector2(39.621025, -150.98242)
+rotation = -2.6138866
+scale = Vector2(0.9775514, -1.0299189)
+skew = -0.0772692
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1446122927]
+libraries/ = SubResource("AnimationLibrary_fpx6y")
+
+[node name="pivot" type="Marker2D" parent="." unique_id=885829785]
+position = Vector2(0.9999695, 386)
+rotation = -0.1320293

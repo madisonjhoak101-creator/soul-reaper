@@ -2,10 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://c7pkwyfm2gy2h" path="res://town.jpg" id="1_e8yg3"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_gwqsq"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_nki3b"]
+[ext_resource type="Script" uid="uid://ywtn7mey2v1b" path="res://area_2d.gd" id="4_gwqsq"]
+[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="4_nki3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1404, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(41.25, 240)
 
 [node name="Node2D" type="StaticBody2D" unique_id=308309964]
 
@@ -19,11 +23,22 @@ position = Vector2(0, 355.75)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("2_gwqsq")]
-position = Vector2(-638, 204)
+position = Vector2(-604, 204)
 scale = Vector2(0.15, 0.15)
 
-[node name="Node2D" parent="." unique_id=58585494 instance=ExtResource("3_nki3b")]
-position = Vector2(-524, 238)
+[node name="Node2D2" parent="." unique_id=1610445084 instance=ExtResource("4_nki3b")]
+position = Vector2(-72, 235)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=537554167]
 zoom = Vector2(0.82, 0.82)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=103403959]
+position = Vector2(694, 226)
+script = ExtResource("4_gwqsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=899500150]
+position = Vector2(-13, -33)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

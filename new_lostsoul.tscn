@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cwr6k7cjm883l"]
+
+[ext_resource type="Texture2D" uid="uid://cxlulv1kxobsh" path="res://673.png" id="1_gvjat"]
+
+[node name="Node2D" type="CharacterBody2D" unique_id=946364236]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=725801343]
+show_behind_parent = true
+position = Vector2(-4.7683716e-07, -1.9073486e-06)
+scale = Vector2(0.099723004, 0.09806835)
+texture = ExtResource("1_gvjat")

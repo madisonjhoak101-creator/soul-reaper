@@ -5,6 +5,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var sprite = $Sprite2D
+@onready var scythe: Node2D = $Scythe
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("swing_scythe"):
+		scythe.swing()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

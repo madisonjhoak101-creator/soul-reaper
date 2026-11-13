@@ -1,6 +1,6 @@
 extends Control
 
-@export var game_scene_path : String = "res://swamp.tscn"
+@export var game_scene_path : String = "res://town.tscn"
 @export var tutorial_scene_path : String = "res://tutorial.tscn"
 @onready var main_menu_path : String = "res://main_menu.tscn"
 
