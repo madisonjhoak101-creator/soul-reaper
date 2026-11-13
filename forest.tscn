@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bjrvoxi8n8rnx" path="res://new forest.png" id="1_uq144"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_stcry"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_uq144"]
+[ext_resource type="Script" uid="uid://di1ayptqw3jas" path="res://ruin2.gd" id="4_mvm06"]
+[ext_resource type="Script" uid="uid://bfd7of5ymjro5" path="res://tranisition_forest.gd" id="4_vmuxp"]
+[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="5_vmuxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
 size = Vector2(1405, 55)
@@ -18,6 +20,12 @@ scale_min = 2.6499999
 scale_max = 4.1
 color = Color(0.38431373, 0.19607843, 0.9372549, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(56, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(119, 235)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1134470995]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323769770]
@@ -26,7 +34,7 @@ scale = Vector2(1.3707317, 1.3628473)
 texture = ExtResource("1_uq144")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_stcry")]
-position = Vector2(-629, 224)
+position = Vector2(-591, 221.00002)
 scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1102965005]
@@ -36,12 +44,32 @@ zoom = Vector2(0.82, 0.825)
 position = Vector2(0.5, 364.5)
 shape = SubResource("RectangleShape2D_stcry")
 
-[node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_uq144")]
-position = Vector2(-477, 257)
-
 [node name="Blowing_leaves" type="GPUParticles2D" parent="." unique_id=36238119]
 position = Vector2(-67, -4)
 amount = 100
 lifetime = 6.6499999999999995
 speed_scale = 3.47
 process_material = SubResource("ParticleProcessMaterial_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2065067451]
+position = Vector2(690, 230)
+script = ExtResource("4_vmuxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1516321927]
+position = Vector2(-9, -41)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1205235100]
+script = ExtResource("4_mvm06")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=259638360]
+position = Vector2(-752, 208)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("5_vmuxp")]
+position = Vector2(-63, 252)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

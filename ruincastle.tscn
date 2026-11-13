@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://vg78na4rfmto" path="res://ruin castle.png" id="1_klipk"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_klipk"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="3_rum34"]
+[ext_resource type="Script" uid="uid://eonilqr07oy5" path="res://town.gd" id="4_kjgoc"]
+[ext_resource type="Script" uid="uid://bk8pvfsb3q547" path="res://ruincastle.gd" id="4_rum34"]
+[ext_resource type="PackedScene" uid="uid://b5wjd23ojshqx" path="res://ruinsoul.tscn" id="5_kjgoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1404.5, 77)
@@ -47,6 +49,12 @@ scale_over_velocity_curve = SubResource("CurveXYZTexture_uujvg")
 color = Color(1, 0.67415977, 0.6048774, 1)
 color_initial_ramp = SubResource("GradientTexture1D_d0i4j")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(35, 176.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(141, 254)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1650717591]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=207268563]
@@ -62,11 +70,8 @@ texture = ExtResource("1_klipk")
 position = Vector2(0, 358)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Node2D" parent="." unique_id=1325533524 instance=ExtResource("3_rum34")]
-position = Vector2(-484.75, 239)
-
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("2_klipk")]
-position = Vector2(-635.75, 205.00002)
+position = Vector2(-554, 205)
 scale = Vector2(0.15, 0.15)
 
 [node name="Rain_heavy" type="GPUParticles2D" parent="." unique_id=1057215245]
@@ -75,3 +80,26 @@ amount = 1000
 lifetime = 0.65
 preprocess = 0.5
 process_material = SubResource("ParticleProcessMaterial_yebir")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1478400534]
+position = Vector2(688, 219)
+script = ExtResource("4_rum34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=211810055]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1468115011]
+script = ExtResource("4_kjgoc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=1388167144]
+position = Vector2(-766, 180)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Node2D" parent="." unique_id=466051746 instance=ExtResource("5_kjgoc")]
+position = Vector2(-56, 244)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

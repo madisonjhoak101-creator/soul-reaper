@@ -52,6 +52,7 @@ func walk_to_target() -> void:
 			animated_sprite.play("walk")
 	var distance_to_target = global_position.distance_to(target_position)
 	if distance_to_target < 5.0:
+		sprite.visible = true
 		is_walking = false
 		velocity = Vector2.ZERO
 	move_and_slide()

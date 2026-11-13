@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ue0lx30uc1q0" path="res://670.png" id="2_5iwgs"]
 [ext_resource type="Script" uid="uid://bim0s58su4a6f" path="res://boat.gd" id="2_fuygp"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_5iwgs"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://lostsoul2.tscn" id="5_v534t"]
+[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://riverlostsoul.tscn" id="5_v534t"]
+[ext_resource type="Script" uid="uid://d1igypgr0gu0l" path="res://river.gd" id="6_a75lk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(648.5, 91)
+size = Vector2(656, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(147, 10)
@@ -36,6 +37,9 @@ turbulence_enabled = true
 turbulence_initial_displacement_min = 1.490116e-06
 turbulence_initial_displacement_max = 0.2000015
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(43, 216.5)
+
 [node name="river" type="StaticBody2D" unique_id=1819163021]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=228161491]
@@ -45,12 +49,12 @@ offset_right = -49.0
 offset_bottom = 284.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=179749500]
-position = Vector2(1.0000159, -14.5)
+position = Vector2(80, -11)
 scale = Vector2(1.1262136, 1.1307472)
 texture = ExtResource("1_v534t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849197182]
-position = Vector2(-369.25, 334.5)
+position = Vector2(-303, 336)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1165994183]
@@ -76,15 +80,16 @@ scale = Vector2(1.1101493, 1.0472528)
 texture = ExtResource("2_5iwgs")
 
 [node name="Node2D2" parent="." unique_id=1538676072 instance=ExtResource("3_5iwgs")]
-position = Vector2(-632, 180)
+position = Vector2(-508, 177)
 scale = Vector2(0.15, 0.15)
 
-[node name="Camera2D" type="Camera2D" parent="Node2D2" unique_id=1772533004]
-position = Vector2(4220, -1293.3334)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1772533004]
+position = Vector2(80, -13.000015)
+scale = Vector2(0.15, 0.15)
 zoom = Vector2(0.827, 0.82)
 
 [node name="Node2D3" parent="." unique_id=1325533524 node_paths=PackedStringArray("reaper") instance=ExtResource("5_v534t")]
-position = Vector2(-517, 212)
+position = Vector2(-378, 212)
 target_position = Vector2(-62, 212)
 reaper = NodePath("../Node2D2")
 
@@ -95,3 +100,14 @@ position = Vector2(311, 128)
 amount = 200
 lifetime = 50.0
 process_material = SubResource("ParticleProcessMaterial_hffna")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=609563745]
+position = Vector2(-692, 134)
+script = ExtResource("6_a75lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=787332766]
+position = Vector2(63, 34)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
