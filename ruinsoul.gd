@@ -11,7 +11,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not player == null:
 		return
-	var distance = gloabl_position.distance_to(player.global_position)
 	var direction: Vector2 = global_position.direction_to(player.global_position)
 	velocity = direction * speed
 

@@ -9,8 +9,6 @@ height = 2.6963103
 
 [node name="Node2D" type="CharacterBody2D" unique_id=466051746]
 script = ExtResource("1_a2l4c")
-speed = null
-stop_distance = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142073676]
 position = Vector2(0, -9.536743e-07)
