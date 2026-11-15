@@ -5,10 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://cm0qtkcg4n8i2" path="res://fog.png" id="4_hhy7r"]
 [ext_resource type="Texture2D" uid="uid://batnut0kutwhl" path="res://841.png" id="5_n40g6"]
 [ext_resource type="Texture2D" uid="uid://bnagmpv3vvu2g" path="res://842.png" id="6_i5ll4"]
+[ext_resource type="Texture2D" uid="uid://cjfm1ji2ngauk" path="res://927.png" id="6_y02kx"]
 [ext_resource type="Texture2D" uid="uid://dfyqdkxqi04a1" path="res://swamp_20261102131625.png" id="7_e0h62"]
+[ext_resource type="Texture2D" uid="uid://dtdauja7k5ixk" path="res://928.png" id="7_hopn7"]
+[ext_resource type="Texture2D" uid="uid://cy0liyqgs0hi2" path="res://930.png" id="8_8fynk"]
 [ext_resource type="Texture2D" uid="uid://crlbqt3oywk71" path="res://swamp_20261104121826.jpg" id="8_kkvbj"]
 [ext_resource type="Texture2D" uid="uid://lqab552hg37j" path="res://swamp_20261102143343.jpg" id="9_k1cpo"]
+[ext_resource type="Texture2D" uid="uid://dpxmoo065ptg7" path="res://932.png" id="9_la5lh"]
 [ext_resource type="Texture2D" uid="uid://clad4k23fa5nm" path="res://swamp_20261102143400.jpg" id="10_dx1o6"]
+[ext_resource type="Texture2D" uid="uid://bv1svv6t1g28y" path="res://934.png" id="10_mbmuj"]
 [ext_resource type="Texture2D" uid="uid://b4eqcvfdvfav2" path="res://swamp_20261102143411.jpg" id="11_sb1go"]
 [ext_resource type="Texture2D" uid="uid://g4tq0abapa58" path="res://swamp_20261102143422.jpg" id="12_4sn80"]
 [ext_resource type="Texture2D" uid="uid://bltcv4wn54h0a" path="res://swamp_20261102143430.jpg" id="13_gq6mx"]
@@ -17,11 +22,39 @@
 [ext_resource type="Script" uid="uid://b0dmt07hrn73t" path="res://swamp.gd" id="15_kkvbj"]
 [ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="16_k1cpo"]
 
+[sub_resource type="Gradient" id="Gradient_e0h62"]
+offsets = PackedFloat32Array(0.003690037, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
+gradient = SubResource("Gradient_e0h62")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kkvbj"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(700, 150, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 39.999996
+linear_accel_max = 59.999996
+scale_min = 1.5
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_a75lk")
+turbulence_enabled = true
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 0.2000015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(30, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(63, 197)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hoa"]
-size = Vector2(194.25, 45.5)
+size = Vector2(233.125, 42.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(202, 45)
+size = Vector2(238, 41)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -67,34 +100,6 @@ animations = [{
 "speed": 1.6
 }]
 
-[sub_resource type="Gradient" id="Gradient_e0h62"]
-offsets = PackedFloat32Array(0.003690037, 1)
-colors = PackedColorArray(0, 1, 0, 1, 1.353256, 1.353256, 1.353256, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
-gradient = SubResource("Gradient_e0h62")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kkvbj"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(700, 150, 0)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 0, 0)
-linear_accel_min = 39.999996
-linear_accel_max = 59.999996
-scale_min = 1.5
-scale_max = 3.0
-color_ramp = SubResource("GradientTexture1D_a75lk")
-turbulence_enabled = true
-turbulence_initial_displacement_min = 1.490116e-06
-turbulence_initial_displacement_max = 0.2000015
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(30, 148)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(63, 197)
-
 [node name="Node2D" type="StaticBody2D" unique_id=1125532503]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302406621]
@@ -102,40 +107,12 @@ position = Vector2(1.3828278e-05, -0.4999876)
 scale = Vector2(0.90697664, 0.9048165)
 texture = ExtResource("1_q7rth")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243385966]
-position = Vector2(-604.875, 314)
-shape = SubResource("RectangleShape2D_g5hoa")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
-position = Vector2(-324, 314)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=239485302]
-position = Vector2(-8, 314)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2023865005]
-position = Vector2(289, 314)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=183271670]
-position = Vector2(582, 314)
-shape = SubResource("RectangleShape2D_g4v7s")
-
 [node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("3_fews0")]
 position = Vector2(-622, 178)
 scale = Vector2(0.15, 0.15)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=43967626]
 zoom = Vector2(0.82, 0.82)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=370190180]
-position = Vector2(0, 348.99997)
-scale = Vector2(1.241, 0.491)
-sprite_frames = SubResource("SpriteFrames_g4v7s")
-autoplay = "default"
-frame_progress = 0.27228922
-speed_scale = 1.5
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=417534867]
 editor_description = "fireflys 
@@ -150,7 +127,7 @@ position = Vector2(693, 203)
 script = ExtResource("15_kkvbj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2010950600]
-position = Vector2(-6, 12)
+position = Vector2(-6, 2)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1793151445]
@@ -162,6 +139,59 @@ shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("16_k1cpo")]
 position = Vector2(40, 212)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1473356577]
+position = Vector2(-585.00006, 304.00003)
+scale = Vector2(0.24311927, 0.13967976)
+texture = ExtResource("6_y02kx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243385966]
+position = Vector2(-584.5625, 307.375)
+shape = SubResource("RectangleShape2D_g5hoa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=416791288]
+position = Vector2(-312.00003, 304)
+scale = Vector2(0.24426615, 0.1532893)
+texture = ExtResource("7_hopn7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
+position = Vector2(-313, 303.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=554856752]
+position = Vector2(-8.000002, 305)
+scale = Vector2(0.24592254, 0.15957446)
+texture = ExtResource("8_8fynk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=239485302]
+position = Vector2(-8, 306)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1002534145]
+position = Vector2(289.00003, 305.00003)
+scale = Vector2(0.24541284, 0.14604811)
+texture = ExtResource("9_la5lh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=2023865005]
+position = Vector2(289, 305)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1373379118]
+position = Vector2(583, 305)
+scale = Vector2(0.24541287, 0.14285718)
+texture = ExtResource("10_mbmuj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=183271670]
+position = Vector2(582, 304.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=370190180]
+position = Vector2(0, 348.99997)
+scale = Vector2(1.241, 0.491)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.27228922
+speed_scale = 1.5
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
