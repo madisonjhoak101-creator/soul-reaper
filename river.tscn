@@ -89,7 +89,7 @@ scale = Vector2(0.15, 0.15)
 zoom = Vector2(0.827, 0.82)
 
 [node name="Node2D3" parent="." unique_id=1325533524 node_paths=PackedStringArray("reaper") instance=ExtResource("5_v534t")]
-position = Vector2(-378, 212)
+position = Vector2(-365, 212)
 target_position = Vector2(-62, 212)
 reaper = NodePath("../Node2D2")
 
