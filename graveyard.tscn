@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b55jo2j8wfiie" path="res://bar2.gd" id="4_rxxet"]
 [ext_resource type="Script" uid="uid://bvr4b1qpqnbp8" path="res://graveyard.gd" id="4_uujvg"]
 [ext_resource type="Texture2D" uid="uid://cp6td1gselp0r" path="res://grave_20261120093925.png" id="6_gsvtp"]
+[ext_resource type="PackedScene" uid="uid://dldppbin41vlo" path="res://graveyardsoul.tscn" id="7_37oy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
 size = Vector2(1395, 64.875)
@@ -172,6 +173,9 @@ texture = ExtResource("6_gsvtp")
 
 [node name="right" type="Marker2D" parent="spawner" unique_id=1479979931]
 position = Vector2(591, 78)
+
+[node name="Node2D" parent="." unique_id=307055421 instance=ExtResource("7_37oy6")]
+position = Vector2(-362, 197)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

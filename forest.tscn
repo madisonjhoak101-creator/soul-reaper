@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_stcry"]
 [ext_resource type="Script" uid="uid://di1ayptqw3jas" path="res://ruin2.gd" id="4_mvm06"]
 [ext_resource type="Script" uid="uid://bfd7of5ymjro5" path="res://tranisition_forest.gd" id="4_vmuxp"]
-[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="5_vmuxp"]
+[ext_resource type="PackedScene" uid="uid://dbjjnhaj2jpr4" path="res://forestsoul.tscn" id="6_8im6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
 size = Vector2(1405, 55)
@@ -71,13 +71,13 @@ script = ExtResource("4_mvm06")
 position = Vector2(-752, 208)
 shape = SubResource("RectangleShape2D_57qmd")
 
-[node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("5_vmuxp")]
-position = Vector2(-63, 252)
-
 [node name="spawner" type="Node2D" parent="." unique_id=898223028]
 position = Vector2(517, 178)
 
 [node name="right" type="Marker2D" parent="spawner" unique_id=2029571565]
+
+[node name="Node2D3" parent="." unique_id=849984018 instance=ExtResource("6_8im6m")]
+position = Vector2(-145, 260)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
