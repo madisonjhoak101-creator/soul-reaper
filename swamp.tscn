@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c7pvvmvq1xr4v"]
 
+[ext_resource type="Script" uid="uid://bslpv4i8c1q0s" path="res://level.gd" id="1_hopn7"]
 [ext_resource type="Texture2D" uid="uid://6dpp3n6aarkm" path="res://793.png" id="1_q7rth"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="3_fews0"]
 [ext_resource type="Texture2D" uid="uid://cm0qtkcg4n8i2" path="res://fog.png" id="4_hhy7r"]
@@ -101,7 +102,10 @@ animations = [{
 "speed": 1.6
 }]
 
-[node name="Node2D" type="StaticBody2D" unique_id=1125532503]
+[node name="Node2D" type="StaticBody2D" unique_id=1125532503 node_paths=PackedStringArray("player", "spawn_positions")]
+script = ExtResource("1_hopn7")
+player = NodePath("Node2D3")
+spawn_positions = [NodePath("spawner/right")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302406621]
 position = Vector2(1.3828278e-05, -0.4999876)
@@ -193,6 +197,11 @@ speed_scale = 1.5
 
 [node name="Node2D" parent="." unique_id=1787512365 instance=ExtResource("21_y02kx")]
 position = Vector2(-9, 219)
+
+[node name="spawner" type="Node2D" parent="." unique_id=242304499]
+
+[node name="right" type="Marker2D" parent="spawner" unique_id=328254366]
+position = Vector2(587, 199)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

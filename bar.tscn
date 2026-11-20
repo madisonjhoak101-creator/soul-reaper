@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://uf2u5e7jlfru"]
 
 [ext_resource type="Texture2D" uid="uid://b73swcld25iqp" path="res://bar1.jpg" id="1_d4kci"]
+[ext_resource type="Script" uid="uid://bslpv4i8c1q0s" path="res://level.gd" id="1_luqre"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_sao2x"]
 [ext_resource type="Texture2D" uid="uid://bg0mj3onog3a6" path="res://Untitled30_20261110180947.png" id="4_fhoit"]
 [ext_resource type="Script" uid="uid://cykr3vq3j7a2a" path="res://bar.gd" id="5_sao2x"]
@@ -34,7 +35,10 @@ scale_max = 2.05
 color = Color(0, 0, 0, 1)
 turbulence_enabled = true
 
-[node name="Node2D" type="StaticBody2D" unique_id=454829516]
+[node name="Node2D" type="StaticBody2D" unique_id=454829516 node_paths=PackedStringArray("player", "spawn_positions")]
+script = ExtResource("1_luqre")
+player = NodePath("Node2D3")
+spawn_positions = [NodePath("spawner/right")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=725363151]
 position = Vector2(1.5000153, 0.9999924)
@@ -91,6 +95,11 @@ skew = 0.9774438
 amount = 32
 lifetime = 2.5
 process_material = SubResource("ParticleProcessMaterial_fhoit")
+
+[node name="spawner" type="Node2D" parent="." unique_id=706775412]
+
+[node name="right" type="Marker2D" parent="spawner" unique_id=2124648786]
+position = Vector2(524, 215)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

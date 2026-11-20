@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	pass
 
 func put_player_at_spawn_id(id:int):
-	player.global_position = spawn_positions[id].global_position
+	player.global_position = spawn_positions[0].global_position

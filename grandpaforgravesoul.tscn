@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccm8effdet5ry"]
+
+[ext_resource type="Texture2D" uid="uid://bxhqrwkq1fxbv" path="res://lost souls_20261120102417.png" id="1_dqyfk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 33.0
+height = 132.0
+
+[node name="Node2D" type="CharacterBody2D" unique_id=319910714]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951516508]
+scale = Vector2(0.09338521, 0.09873795)
+texture = ExtResource("1_dqyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1107323111]
+shape = SubResource("CapsuleShape2D_g4v7s")

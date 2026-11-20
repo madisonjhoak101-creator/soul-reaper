@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://cw5x2te4c13w4"]
 
+[ext_resource type="Script" uid="uid://bslpv4i8c1q0s" path="res://level.gd" id="1_gsvtp"]
 [ext_resource type="Texture2D" uid="uid://2ejjucv7efh3" path="res://graveyard.png" id="1_skvyd"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_skvyd"]
 [ext_resource type="Script" uid="uid://b55jo2j8wfiie" path="res://bar2.gd" id="4_rxxet"]
 [ext_resource type="Script" uid="uid://bvr4b1qpqnbp8" path="res://graveyard.gd" id="4_uujvg"]
-[ext_resource type="PackedScene" uid="uid://dldppbin41vlo" path="res://graveyardsoul.tscn" id="6_37oy6"]
 [ext_resource type="Texture2D" uid="uid://cp6td1gselp0r" path="res://grave_20261120093925.png" id="6_gsvtp"]
-[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="5_rxxet"]
-[ext_resource type="Texture2D" uid="uid://d4k3eomyfh7ta" path="res://pixil-frame-0.png" id="6_37oy6"]
-[ext_resource type="Script" uid="uid://bgxfsbgqf72t0" path="res://bolt.gd" id="7_p5nu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
 size = Vector2(1395, 64.875)
@@ -91,7 +88,10 @@ size = Vector2(20, 182)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(70, 213)
 
-[node name="Graveyard" type="StaticBody2D" unique_id=2060923638]
+[node name="Graveyard" type="StaticBody2D" unique_id=2060923638 node_paths=PackedStringArray("player", "spawn_positions")]
+script = ExtResource("1_gsvtp")
+player = NodePath("Node2D2")
+spawn_positions = [NodePath("spawner/right")]
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=510479475]
 position = Vector2(0, 3.0517578e-05)
@@ -168,8 +168,10 @@ position = Vector2(-418.12503, 99)
 scale = Vector2(0.07890856, 0.1013289)
 texture = ExtResource("6_gsvtp")
 
-[node name="Node2D" parent="." unique_id=307055421 instance=ExtResource("6_37oy6")]
-position = Vector2(-335, 201)
+[node name="spawner" type="Node2D" parent="." unique_id=1369209390]
+
+[node name="right" type="Marker2D" parent="spawner" unique_id=1479979931]
+position = Vector2(591, 78)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

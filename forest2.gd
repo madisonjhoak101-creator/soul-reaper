@@ -10,7 +10,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if entered == true:
-		get_tree().change_scene_to_file("res://forest.tscn")
+		var tree = get_tree()
+		var forest = load("res://forest.tscn").instantiate()
+		tree.change_scene_to_node(forest)
+		forest.put_player_at_spawn_id(0)
 
 
 func _on_body_entered(body: Node2D) -> void:

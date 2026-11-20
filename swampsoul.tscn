@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://hqdt67cwobes" path="res://swampsoul.gd" id="1_4l371"]
 [ext_resource type="Texture2D" uid="uid://cnn6put4yrygf" path="res://944.png" id="1_lgwab"]
-[ext_resource type="PackedScene" uid="uid://c351otrqp4lhy" path="res://riverlostsoul.tscn" id="2_4l371"]
 
 [node name="Node2D" type="CharacterBody2D" unique_id=1787512365]
 script = ExtResource("1_4l371")
@@ -13,5 +12,3 @@ scale = Vector2(0.0909987, 0.1017075)
 texture = ExtResource("1_lgwab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415749767]
-
-[node name="CharacterBody2D2" parent="." unique_id=58585494 instance=ExtResource("2_4l371")]
