@@ -4,15 +4,17 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@onready var sprite = $Sprite2D
-@onready var scythe: Node2D = $Scythe
+@export var sprite : Sprite2D
+@export  var scythe: Node2D
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+
 	if event.is_action_pressed("swing_scythe"):
 		scythe.swing()
 
 func _physics_process(delta: float) -> void:
+	print (global_position)
 	# Add the gravity.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction != 0:

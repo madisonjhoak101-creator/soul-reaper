@@ -1,26 +1,29 @@
 [gd_scene format=3 uid="uid://dxhpw1lvlcdjj"]
 
 [ext_resource type="Texture2D" uid="uid://c7pkwyfm2gy2h" path="res://town.jpg" id="1_e8yg3"]
+[ext_resource type="Script" uid="uid://bslpv4i8c1q0s" path="res://level.gd" id="1_nki3b"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_gwqsq"]
 [ext_resource type="Script" uid="uid://ywtn7mey2v1b" path="res://area_2d.gd" id="4_gwqsq"]
 [ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="4_nki3b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1404, 77.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(41.25, 240)
 
-[node name="Node2D" type="StaticBody2D" unique_id=308309964]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1404, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(23, 317)
+
+[node name="Node2D" type="Node2D" unique_id=853713800 node_paths=PackedStringArray("player", "spawn_positions")]
+script = ExtResource("1_nki3b")
+player = NodePath("Node2D3")
+spawn_positions = [NodePath("spawnposition/rightside")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574956481]
 position = Vector2(3.2126904e-05, -6.1690807e-06)
 scale = Vector2(1.0985916, 1.0987483)
 texture = ExtResource("1_e8yg3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315684420]
-position = Vector2(0, 355.75)
-shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Node2D3" parent="." unique_id=1538676072 instance=ExtResource("2_gwqsq")]
 position = Vector2(-604, 204)
@@ -39,6 +42,23 @@ script = ExtResource("4_gwqsq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=899500150]
 position = Vector2(-13, -33)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1011151834]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1315684420]
+position = Vector2(0, 355.75)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="spawnposition" type="Node2D" parent="." unique_id=522225017]
+
+[node name="rightside" type="Marker2D" parent="spawnposition" unique_id=1963760804]
+position = Vector2(495, 184)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1404078066]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1678165192]
+position = Vector2(-692.5, 155.5)
+shape = SubResource("RectangleShape2D_d0u6y")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

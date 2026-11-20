@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bibyytk5w3ca7" path="res://swamp_20261102143438.jpg" id="14_y02kx"]
 [ext_resource type="Script" uid="uid://dlytsq70qcx6s" path="res://forest2.gd" id="15_k1cpo"]
 [ext_resource type="Script" uid="uid://b0dmt07hrn73t" path="res://swamp.gd" id="15_kkvbj"]
-[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="16_k1cpo"]
+[ext_resource type="PackedScene" uid="uid://mqmaywk7bsln" path="res://swampsoul.tscn" id="21_y02kx"]
 
 [sub_resource type="Gradient" id="Gradient_e0h62"]
 offsets = PackedFloat32Array(0.003690037, 1)
@@ -137,9 +137,6 @@ script = ExtResource("15_k1cpo")
 position = Vector2(-730, 186)
 shape = SubResource("RectangleShape2D_57qmd")
 
-[node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("16_k1cpo")]
-position = Vector2(40, 212)
-
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1473356577]
 position = Vector2(-585.00006, 304.00003)
 scale = Vector2(0.24311927, 0.13967976)
@@ -192,6 +189,9 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 frame_progress = 0.27228922
 speed_scale = 1.5
+
+[node name="Node2D" parent="." unique_id=1787512365 instance=ExtResource("21_y02kx")]
+position = Vector2(-9, 219)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

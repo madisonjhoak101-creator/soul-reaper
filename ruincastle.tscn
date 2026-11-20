@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c5t5nei4au174"]
 
+[ext_resource type="Script" uid="uid://dwpfqqpjnvu7a" path="res://level2.gd" id="1_dayng"]
 [ext_resource type="Texture2D" uid="uid://vg78na4rfmto" path="res://ruin castle.png" id="1_klipk"]
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_klipk"]
 [ext_resource type="Script" uid="uid://eonilqr07oy5" path="res://town.gd" id="4_kjgoc"]
@@ -55,7 +56,10 @@ size = Vector2(35, 176.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(141, 254)
 
-[node name="Node2D" type="StaticBody2D" unique_id=1650717591]
+[node name="Node2D" type="StaticBody2D" unique_id=1650717591 node_paths=PackedStringArray("player", "spawn_positions")]
+script = ExtResource("1_dayng")
+player = NodePath("Node2D2")
+spawn_positions = [NodePath("spawner/right")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=207268563]
 scale = Vector2(0.15, 0.15)
@@ -98,6 +102,12 @@ shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Node2D" parent="." unique_id=466051746 instance=ExtResource("5_kjgoc")]
 position = Vector2(-56, 244)
+
+[node name="spawner" type="Node2D" parent="." unique_id=914775801]
+position = Vector2(521, 202)
+
+[node name="right" type="Marker2D" parent="spawner" unique_id=1868709828]
+position = Vector2(-8, -18)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

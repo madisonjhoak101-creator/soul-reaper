@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://chmm0wxh2qmlw" path="res://reaper.tscn" id="2_skvyd"]
 [ext_resource type="Script" uid="uid://b55jo2j8wfiie" path="res://bar2.gd" id="4_rxxet"]
 [ext_resource type="Script" uid="uid://bvr4b1qpqnbp8" path="res://graveyard.gd" id="4_uujvg"]
-[ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="5_rxxet"]
+[ext_resource type="PackedScene" uid="uid://dldppbin41vlo" path="res://graveyardsoul.tscn" id="6_37oy6"]
+[ext_resource type="Texture2D" uid="uid://cp6td1gselp0r" path="res://grave_20261120093925.png" id="6_gsvtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
 size = Vector2(1395, 64.875)
@@ -159,8 +160,13 @@ script = ExtResource("4_rxxet")
 position = Vector2(-726, 206)
 shape = SubResource("RectangleShape2D_yf5fn")
 
-[node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("5_rxxet")]
-position = Vector2(66, 136)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=169198003]
+position = Vector2(-418.12503, 99)
+scale = Vector2(0.07890856, 0.1013289)
+texture = ExtResource("6_gsvtp")
+
+[node name="Node2D" parent="." unique_id=307055421 instance=ExtResource("6_37oy6")]
+position = Vector2(-335, 201)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

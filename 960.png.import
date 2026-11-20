@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b17xx7a450dkh"
-path="res://.godot/imported/afterlife.jpg-7e06a6c0b4505224a5583bc013c60632.ctex"
+uid="uid://bmla1kx02euea"
+path="res://.godot/imported/960.png-0b9eea6dbb3a3167f9f929c248d97038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://afterlife.jpg"
-dest_files=["res://.godot/imported/afterlife.jpg-7e06a6c0b4505224a5583bc013c60632.ctex"]
+source_file="res://960.png"
+dest_files=["res://.godot/imported/960.png-0b9eea6dbb3a3167f9f929c248d97038.ctex"]
 
 [params]
 
