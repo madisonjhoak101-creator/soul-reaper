@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://mqmaywk7bsln" path="res://swampsoul.tscn" id="21_y02kx"]
 
 [sub_resource type="Gradient" id="Gradient_e0h62"]
-offsets = PackedFloat32Array(0.003690037, 1)
+offsets = PackedFloat32Array(0.018779343, 1)
 colors = PackedColorArray(0, 1, 0, 1, 1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_a75lk"]
@@ -39,6 +39,7 @@ linear_accel_min = 39.999996
 linear_accel_max = 59.999996
 scale_min = 1.5
 scale_max = 3.0
+color = Color(0, 1, 0, 1)
 color_ramp = SubResource("GradientTexture1D_a75lk")
 turbulence_enabled = true
 turbulence_initial_displacement_min = 1.490116e-06
