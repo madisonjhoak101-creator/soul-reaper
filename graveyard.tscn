@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b55jo2j8wfiie" path="res://bar2.gd" id="4_rxxet"]
 [ext_resource type="Script" uid="uid://bvr4b1qpqnbp8" path="res://graveyard.gd" id="4_uujvg"]
 [ext_resource type="PackedScene" uid="uid://cwr6k7cjm883l" path="res://new_lostsoul.tscn" id="5_rxxet"]
+[ext_resource type="Texture2D" uid="uid://d4k3eomyfh7ta" path="res://pixil-frame-0.png" id="6_37oy6"]
+[ext_resource type="Script" uid="uid://bgxfsbgqf72t0" path="res://bolt.gd" id="7_p5nu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok5c"]
 size = Vector2(1395, 64.875)
@@ -162,7 +164,17 @@ shape = SubResource("RectangleShape2D_yf5fn")
 [node name="Node2D" parent="." unique_id=1610445084 instance=ExtResource("5_rxxet")]
 position = Vector2(66, 136)
 
+[node name="Bolt" type="Sprite2D" parent="." unique_id=792689989]
+position = Vector2(-418, -101.375)
+scale = Vector2(1, 1.8240741)
+texture = ExtResource("6_37oy6")
+script = ExtResource("7_p5nu3")
+
+[node name="Timer" type="Timer" parent="Bolt" unique_id=1340923270]
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="timeout" from="Bolt/Timer" to="Bolt" method="_on_timer_timeout"]
