@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cnegbb4uov1nv"]
+
+[ext_resource type="Texture2D" uid="uid://d08hue7qrwc6h" path="res://end screen.jpg" id="1_nm7lk"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c1t8d"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(700, 350, 1)
+initial_velocity_min = 40.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 10, 0)
+scale_min = 2.6499999
+scale_max = 4.1
+color = Color(0.30433342, 0.68655646, 0.99919695, 1)
+
+[node name="Credits" type="StaticBody2D" unique_id=1912506848]
+
+[node name="EndScreen" type="Sprite2D" parent="." unique_id=1109603086]
+position = Vector2(0.5000191, 1.0000057)
+scale = Vector2(1.13176, 1.1328671)
+texture = ExtResource("1_nm7lk")
+
+[node name="Label" type="Label" parent="." unique_id=1255153089]
+offset_left = -92.0
+offset_top = -287.0
+offset_right = -32.0
+offset_bottom = -264.0
+text = "Credits: 
+"
+
+[node name="Blowing_leaves" type="GPUParticles2D" parent="." unique_id=848005024]
+position = Vector2(-67, -4)
+amount = 100
+lifetime = 6.6499999999999995
+speed_scale = 3.47
+process_material = SubResource("ParticleProcessMaterial_c1t8d")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1052087690]
