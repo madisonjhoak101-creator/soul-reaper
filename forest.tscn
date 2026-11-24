@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://di1ayptqw3jas" path="res://ruin2.gd" id="4_mvm06"]
 [ext_resource type="Script" uid="uid://bfd7of5ymjro5" path="res://tranisition_forest.gd" id="4_vmuxp"]
 [ext_resource type="PackedScene" uid="uid://dbjjnhaj2jpr4" path="res://forestsoul.tscn" id="6_8im6m"]
+[ext_resource type="PackedScene" uid="uid://cce4grw3ksukt" path="res://forestsoul2.tscn" id="7_dvh0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcry"]
 size = Vector2(1405, 55)
@@ -78,6 +79,9 @@ position = Vector2(517, 178)
 
 [node name="Node2D3" parent="." unique_id=849984018 instance=ExtResource("6_8im6m")]
 position = Vector2(-145, 260)
+
+[node name="Node2D" parent="." unique_id=555352110 instance=ExtResource("7_dvh0n")]
+position = Vector2(256, 269)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

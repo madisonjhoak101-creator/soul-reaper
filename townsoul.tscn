@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0cwfoiilawgw"]
 
 [ext_resource type="Texture2D" uid="uid://bcc1dp3q54bk4" path="res://1107.png" id="1_hx1i5"]
+[ext_resource type="PackedScene" uid="uid://c215jhwdr41ca" path="res://speechbubble.tscn" id="2_7v10a"]
 
 [node name="Node2D" type="CharacterBody2D" unique_id=1641699941]
 
@@ -8,3 +9,10 @@
 position = Vector2(0, 5.9604645e-08)
 scale = Vector2(0.08470291, 0.09502598)
 texture = ExtResource("1_hx1i5")
+
+[node name="speechbubble" parent="." unique_id=611345593 instance=ExtResource("2_7v10a")]
+visible = true
+offset_left = 30.0
+offset_top = -98.0
+offset_right = 102.0
+offset_bottom = -53.0

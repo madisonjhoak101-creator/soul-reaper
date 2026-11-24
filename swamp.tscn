@@ -152,12 +152,12 @@ position = Vector2(-584.5625, 307.375)
 shape = SubResource("RectangleShape2D_g5hoa")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=416791288]
-position = Vector2(-312.00003, 304)
+position = Vector2(-304.00003, 307)
 scale = Vector2(0.24426615, 0.1532893)
 texture = ExtResource("7_hopn7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1730222432]
-position = Vector2(-313, 303.5)
+position = Vector2(-296, 305)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=554856752]

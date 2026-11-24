@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://g0cd7f5njbcn" path="res://reaper.gd" id="1_bpyeu"]
 [ext_resource type="Texture2D" uid="uid://f2mmjd2iwvm3" path="res://663.png" id="2_7mi6d"]
 [ext_resource type="PackedScene" uid="uid://cqsx8iywlhe7l" path="res://scythe.tscn" id="3_bpyeu"]
+[ext_resource type="PackedScene" uid="uid://syt8gjd806fu" path="res://reaperspeechbubble.tscn" id="4_vj8bx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 161.32062
@@ -23,3 +24,9 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 show_behind_parent = true
 position = Vector2(-285.84888, -247.16992)
 rotation = -0.0032729548
+
+[node name="speechbubble" parent="." unique_id=628662851 instance=ExtResource("4_vj8bx")]
+offset_left = 292.45258
+offset_top = -623.58514
+offset_right = 1160.3763
+offset_bottom = -223.58502

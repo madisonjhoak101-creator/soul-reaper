@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c215jhwdr41ca"]
+
+[ext_resource type="Script" uid="uid://6e4br23vennp" path="res://speechbubble.gd" id="1_2w7c4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+
+[node name="speechbubble" type="PanelContainer" unique_id=611345593]
+visible = false
+offset_right = 361.0
+offset_bottom = 92.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+script = ExtResource("1_2w7c4")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1707402128]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1709869096]
+layout_mode = 2
+text = "Hi i don't know where i am can you help me."
